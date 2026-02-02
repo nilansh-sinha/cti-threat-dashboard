@@ -1,0 +1,13 @@
+date,attack_type,country,sector,severity
+2024-01-05,Ransomware,India,Finance,High
+2024-01-12,Phishing,USA,Healthcare,Medium
+2024-01-20,DDoS,Germany,Government,High
+2024-02-03,Ransomware,USA,Finance,High
+2024-02-15,Malware,Brazil,Retail,Low
+2024-02-28,Phishing,India,Technology,Medium
+2024-03-05,DDoS,China,Government,High
+2024-03-10,Ransomware,Germany,Manufacturing,Critical
+2024-03-18,SQL Injection,USA,Finance,High
+2024-03-25,Phishing,UK,Healthcare,Medium
+2024-04-02,Ransomware,India,Finance,High
+2024-04-10,DDoS,USA,Government,Medium

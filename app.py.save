@@ -1,0 +1,40 @@
+from flask import Flask, render_template, request, jsonify
+import pandas as pd
+import plotly.express as px
+import plotly.utils
+import json
+
+app = Flask(__name__)
+
+# ==============================
+# SIMULATED THREAT INTELLIGENCE
+# ==============================
+KNOWN_IOCS = {
+    "45.67.89.1": "Cobalt Strike C2 Server",
+    "malware.exe": "Emotet Loader",
+    "bad-domain.com": "Phishing Landing Page",
+    "192.168.1.100": "Test Malicious IP"
+}
+
+# ==============================
+# LOAD DATA
+# ==============================
+def load_data():
+    return pd.read_csv("data/threats.csv")
+
+# ==============================
+# DASHBOARD ROUTE
+# ==============================
+@app.route("/")
+def dashboard():
+    df = load_data()
+
+    # KPIs
+    total_attacks = len(df)
+    unique_types = df["attack_type"].nunique()
+
+    # 🔥 FIX: convert severity from string to int
+    latest = df.iloc[-1]
+    severity = int(latest["severity"])
+
+    if severity >= 81q2
