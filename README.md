@@ -9,6 +9,11 @@ A web-based Cyber Threat Intelligence (CTI) dashboard built with Flask that visu
 - IOC lookup (IP, domain, hash)
 - Clean dark-themed dashboard UI
 
+## 📸 Screenshots
+
+![Dashboard Preview](dashboard_preview.png)
+
+
 ## 🛠 Tech Stack
 - Python (Flask)
 - HTML, CSS, JavaScript
