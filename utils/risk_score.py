@@ -16,7 +16,7 @@ def calculate_risk(attack_type, sector, severity):
     else:
         score += 10
 
-    # Sector Weights
+    # Sector Weights - keeping this as it adds flavor
     if sector == "Finance":
         score += 30
     elif sector == "Healthcare":
@@ -28,7 +28,7 @@ def calculate_risk(attack_type, sector, severity):
     else:
         score += 10
 
-    # Severity Weights
+    # Severity Weights (Simulated "Severity" component of the new model)
     if severity == "Critical":
         score += 30
     elif severity == "High":
@@ -37,8 +37,13 @@ def calculate_risk(attack_type, sector, severity):
         score += 15
     elif severity == "Low":
         score += 5
-
-    # Cap at 100
+        
+    # Volume & Trend Simulation (Randomized or passed in, but here we just add a base factor for now to represent "Analysis")
+    # In a real system, this would query historical volume.
+    # We will simulate "High Volume" impact if the score is already getting high.
+    if score > 60:
+        score += 10 # Simulate "High Volume/Trend" boost
+        
     return min(score, 100)
 
 def get_risk_level(score):
